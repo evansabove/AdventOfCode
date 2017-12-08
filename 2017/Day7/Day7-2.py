@@ -66,8 +66,17 @@ with open('input.txt', 'r') as inputFile:
 		if len(set(values)) > 1:
 			print values
 			differenceNeedsToBe = max(values) - min(values)
-			print differenceNeedsToBe
-			print i
+			print "Difference needs to be " + str(differenceNeedsToBe) + " on " + i["name"]
+			childWeights = [getWeight(c["name"], programs) for c in i["children"]]
+
+			indexToReduce = values.index(max(values))
+
+			resultingWeight = childWeights[indexToReduce] - differenceNeedsToBe
+
+			print resultingWeight
+
+
+			#print pairs of values, weights of children
 
 
 
