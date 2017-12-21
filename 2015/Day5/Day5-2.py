@@ -22,8 +22,12 @@ def hasNoForbiddenStrings(input):
 	return True
 
 
+def isNice(string):
+	return containsThreeVowels(i) and hasDoubleLetter(i) and hasNoForbiddenStrings(i)
+
+
 with open('input.txt', 'r') as inputFile:
 	allStrings = inputFile.readlines()
 
-	print len([i for i in allStrings if containsThreeVowels(i) and hasDoubleLetter(i) and hasNoForbiddenStrings(i)])
+	print len([i for i in allStrings if isNice(i)])
 
