@@ -10,8 +10,6 @@ def findPrograms(id):
 	for i in [c for c in children if c not in programs]:
 		findPrograms(i)
 
-
-
 def findGroups():
 	global programs, programCount
 
