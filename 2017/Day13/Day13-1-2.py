@@ -2,8 +2,6 @@ def makePass(delay, layers, depths):
 
 	lastLayer = max(depths)
 
-	caught = False
-
 	for layer in range(lastLayer+1):
 
 		if layer not in depths:
@@ -12,9 +10,12 @@ def makePass(delay, layers, depths):
 		thisLayer = [l for l in layers if l['depth'] == layer][0]
 		period = (2*thisLayer['range'])-2
 
-		caught = (layer+delay) % period == 0 or caught
+		caught = (layer+delay) % period == 0
 
-	return caught
+		if caught:
+			return True
+
+	return False
 
 
 with open('input.txt', 'r') as inputFile:
@@ -36,8 +37,5 @@ with open('input.txt', 'r') as inputFile:
 			break
 
 		testDelay = testDelay + 1
-
-		if testDelay % 1000 == 0:
-			print testDelay
 
 	print testDelay
