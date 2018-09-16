@@ -18,7 +18,9 @@ namespace AdventOfCode
             _solutions = new List<ISolution>
             {
                 new Day1Solution(),
-                new Day2Solution()
+                new Day2Solution(),
+                new Day3Solution()
+                
             };
         }
 
