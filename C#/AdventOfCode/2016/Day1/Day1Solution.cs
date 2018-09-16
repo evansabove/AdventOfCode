@@ -15,7 +15,7 @@ namespace AdventOfCode
         West = 3
     }
 
-    public class Day1Solution
+    public class Day1Solution : ISolution
     {
         private Direction _currentDirection = Direction.North;
         private int _currentX = 0;
@@ -35,9 +35,9 @@ namespace AdventOfCode
             R5, L5, R5, R3 leaves you 12 blocks away.
             How many blocks away is Easter Bunny HQ?
          */
-        public int Part1()
+        public string Part1()
         {
-            var input = File.ReadAllText(Path.Combine(TestContext.CurrentContext.TestDirectory, "Day 1", "input.txt"));
+            var input = File.ReadAllText(Path.Combine(TestContext.CurrentContext.TestDirectory, "2016", "Day1", "input.txt"));
             
             var directions = input.Split(',').Select(x => x.Trim());
 
@@ -63,7 +63,7 @@ namespace AdventOfCode
                 }
             }
 
-            return Math.Abs(_currentX) + Math.Abs(_currentY);
+            return (Math.Abs(_currentX) + Math.Abs(_currentY)).ToString();
         }
 
         /*
@@ -73,9 +73,9 @@ namespace AdventOfCode
 
             How many blocks away is the first location you visit twice?
          */
-        public int Part2()
+        public string Part2()
         {
-            var input = File.ReadAllText(Path.Combine(TestContext.CurrentContext.TestDirectory, "Day 1", "input.txt"));
+            var input = File.ReadAllText(Path.Combine(TestContext.CurrentContext.TestDirectory, "2016", "Day1", "input.txt"));
 
             var directions = input.Split(',').Select(x => x.Trim());
 
@@ -92,7 +92,7 @@ namespace AdventOfCode
                         for(var i=0; i<distance; i++)
                         {
                             if(visitedLocations.Any(x => x.Item1 == _currentX && x.Item2 == _currentY))
-                                return Math.Abs(_currentX) + Math.Abs(_currentY);
+                                return (Math.Abs(_currentX) + Math.Abs(_currentY)).ToString();
 
                             visitedLocations.Add(new Tuple<int, int>(_currentX, _currentY));
                             _currentY++;
@@ -103,7 +103,7 @@ namespace AdventOfCode
                         for (var i=0; i<distance; i++)
                         {
                             if (visitedLocations.Any(x => x.Item1 == _currentX && x.Item2 == _currentY))
-                                return Math.Abs(_currentX) + Math.Abs(_currentY);
+                                return (Math.Abs(_currentX) + Math.Abs(_currentY)).ToString();
 
                             visitedLocations.Add(new Tuple<int, int>(_currentX, _currentY));
                             _currentX++;
@@ -114,7 +114,7 @@ namespace AdventOfCode
                         for (var i=0; i<distance; i++)
                         {
                             if (visitedLocations.Any(x => x.Item1 == _currentX && x.Item2 == _currentY))
-                                return Math.Abs(_currentX) + Math.Abs(_currentY);
+                                return (Math.Abs(_currentX) + Math.Abs(_currentY)).ToString();
 
                             visitedLocations.Add(new Tuple<int, int>(_currentX, _currentY));
                             _currentY--;
@@ -125,7 +125,7 @@ namespace AdventOfCode
                         for (var i = 0; i < distance; i++)
                         {
                             if (visitedLocations.Any(x => x.Item1 == _currentX && x.Item2 == _currentY))
-                                return Math.Abs(_currentX) + Math.Abs(_currentY);
+                                return (Math.Abs(_currentX) + Math.Abs(_currentY)).ToString();
 
                             visitedLocations.Add(new Tuple<int, int>(_currentX, _currentY));
                             _currentX--;
@@ -134,7 +134,7 @@ namespace AdventOfCode
                 }
             }
 
-            return Math.Abs(_currentX) + Math.Abs(_currentY);
+            return (Math.Abs(_currentX) + Math.Abs(_currentY)).ToString();
         }
 
         private Direction GetNewDirection(char letter)

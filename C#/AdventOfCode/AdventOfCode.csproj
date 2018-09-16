@@ -51,17 +51,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Day 1\Day1Solution.cs" />
-    <Compile Include="Day 1\Day1Test.cs" />
+    <Compile Include="2016\Day1\Day1Solution.cs" />
+    <Compile Include="2016\Day2\Day2Solution.cs" />
+    <Compile Include="ISolution.cs" />
     <Compile Include="MainSolution.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestFixture.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Day 1\input.txt">
+    <Content Include="2016\Day1\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day2\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

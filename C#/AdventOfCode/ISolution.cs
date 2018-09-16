@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode
 {
-    public class MainSolution
+    public interface ISolution
     {
-        public static void Main(string[] args)
-        {
-
-        }
+        string Part1();
+        string Part2();
     }
-
 }
