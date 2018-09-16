@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="2016\Day1\Day1Solution.cs" />
+    <Compile Include="2016\Day4\Day4Solution.cs" />
     <Compile Include="2016\Day3\Day3Solution.cs" />
     <Compile Include="2016\Day2\Day2Solution.cs" />
     <Compile Include="ISolution.cs" />
@@ -65,6 +66,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="2016\Day1\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day4\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="2016\Day3\input.txt">
