@@ -15,14 +15,18 @@ namespace AdventOfCode
         [OneTimeSetUp]
         public void Before()
         {
-            _solutions = new List<ISolution>
-            {
-                new Day1Solution(),
-                new Day2Solution(),
-                new Day3Solution(),
-                new Day4Solution()
+            var type = typeof(ISolution);
+            var types = AppDomain.CurrentDomain.GetAssemblies()
+                .SelectMany(s => s.GetTypes())
+                .Where(p => type.IsAssignableFrom(p) && !p.IsInterface)
+                .OrderBy(x => x.Name);
 
-            };
+            _solutions = new List<ISolution>();
+
+            foreach(var t in types)
+            {
+                _solutions.Add((ISolution)Activator.CreateInstance(t));
+            }
         }
 
         [Test]
@@ -54,5 +58,11 @@ namespace AdventOfCode
             Assert.AreEqual("zab", day4.Shift("xyz", 2));
         }
 
+        [Test]
+        public void Day5()
+        {
+            var day5 = new Day5Solution();
+            Console.WriteLine(day5.Part2());
+        }
     }
 }
