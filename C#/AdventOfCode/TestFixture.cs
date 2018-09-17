@@ -64,5 +64,13 @@ namespace AdventOfCode
             var day5 = new Day5Solution();
             Console.WriteLine(day5.Part2());
         }
+
+        [Test]
+        public void Day6()
+        {
+            var day6 = new Day6Solution();
+            Console.WriteLine(day6.Part1());
+            Console.WriteLine(day6.Part2());
+        }
     }
 }
