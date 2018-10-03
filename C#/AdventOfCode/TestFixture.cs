@@ -72,5 +72,25 @@ namespace AdventOfCode
             Console.WriteLine(day6.Part1());
             Console.WriteLine(day6.Part2());
         }
+
+        [Test]
+        public void Day7()
+        {
+            var day7 = new Day7Solution();
+
+            Assert.True(day7.SupportsTls("abba[mnop]qrst"));
+            Assert.False(day7.SupportsTls("abcd[bddb]xyyx"));
+            Assert.False(day7.SupportsTls("aaaa[qwer]tyui"));
+            Assert.True(day7.SupportsTls("ioxxoj[asdfgh]zxcvbn"));
+
+            Console.WriteLine(day7.Part1());
+
+            Assert.True(day7.SupportsSsl("aba[bab]xyz"));
+            Assert.False(day7.SupportsSsl("xyx[xyx]xyx"));
+            Assert.True(day7.SupportsSsl("aaa[kek]eke"));
+            Assert.True(day7.SupportsSsl("zazbz[bzb]cdb"));
+
+            Console.WriteLine(day7.Part2());
+        }
     }
 }
