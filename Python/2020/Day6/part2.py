@@ -17,9 +17,3 @@ with open('input.txt') as input:
                 
         
     print(yesCount)
-    
-    
-    
-    
-# I have ['abc'] and I want [['a','b','c']]
-# I have ['ab', 'ac'] and I want [['a','b'],['a','c']]
